@@ -1,6 +1,6 @@
 const weAreInProduction = process.env.NODE_ENV === "production";
-const assetPrefix = weAreInProduction ? "/good-deeds" : "";
-// const assetPrefix = "";
+// const assetPrefix = weAreInProduction ? "/good-deeds" : "";
+const assetPrefix = process.env.ASSET_PREFIX;
 
 const urlFor = (path = "/") => `${assetPrefix}${path}`;
 
