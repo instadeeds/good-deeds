@@ -29,7 +29,7 @@ const AppLogo = styled.img.attrs({
     border-radius: 50%;
     margin-bottom: 30px;
     border: 1vh solid rgb(77, 109, 62);
-    /* animation: App-logo-spin 10s infinite linear; */
+    animation: App-logo-spin 10s infinite linear;
   }
 
   @keyframes App-logo-spin {
@@ -39,6 +39,9 @@ const AppLogo = styled.img.attrs({
     to {
       transform: rotate(360deg);
     }
+  }
+  :hover {
+    animation: App-logo-spin 1s infinite !important;
   }
 `;
 
@@ -73,11 +76,20 @@ const AnimatedTyping = () => (
   </p>
 );
 
+const BiggerOnHover = styled.div`
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  :hover {
+    transform: scale(1.2);
+  }
+`;
+
 const Contents = () => (
   <Root>
     <AppHeader>
       <ActionsMattersText />
-      <AppLogo />
+      <BiggerOnHover>
+        <AppLogo />
+      </BiggerOnHover>
       <AnimatedTyping />
     </AppHeader>
   </Root>
